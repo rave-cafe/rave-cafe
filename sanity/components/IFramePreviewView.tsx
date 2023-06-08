@@ -2,19 +2,12 @@ import { Box, Text } from '@sanity/ui'
 import { ComponentProps, Suspense } from 'react'
 import { isRecord, isString, useClient } from 'sanity'
 import { UserViewComponent } from 'sanity/desk'
-import styled from 'styled-components'
 import { suspend } from 'suspend-react'
 
 import { apiVersion, previewSecretDocumentId } from '../env'
 import { getPreviewSecret } from '../lib/previewSecret'
 
 const FETCH_SECRET = Symbol(previewSecretDocumentId)
-
-const StyledIframe = styled.iframe`
-  border: 0;
-  width: 100%;
-  height: 100%;
-`
 
 export function IFramePreviewView(props: ComponentProps<UserViewComponent>) {
   const {
@@ -72,7 +65,8 @@ function PagePreviewWithSecret(props: {
   }
 
   return (
-    <StyledIframe
+    <iframe
+      style={{ border: 0, width: '100%', height: '100%' }}
       src={`/api/sanity/preview?type=${type}&id=${id}&slug=${slug}&secret=${secret}`}
     />
   )
