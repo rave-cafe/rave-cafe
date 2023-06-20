@@ -17,20 +17,18 @@ You can use this starter to kick-start a clean slate site or learn these technol
 
 ## Table of Contents
 
-- [Features](#features)
-- [Table of Contents](#table-of-contents)
-- [Project Overview](#project-overview)
-  - [Important files and folders](#important-files-and-folders)
-- [Configuration](#configuration)
-  - [Step 1. Set up the environment](#step-1-set-up-the-environment)
-  - [Step 2. Set up the project locally](#step-2-set-up-the-project-locally)
-  - [Step 3. Run Next.js locally in development mode](#step-3-run-nextjs-locally-in-development-mode)
-  - [Step 4. Deploy to production](#step-4-deploy-to-production)
-- [Questions and Answers](#questions-and-answers)
-  - [It doesn't work! Where can I get help?](#it-doesnt-work-where-can-i-get-help)
-  - [How can I remove the "Next steps" block from my app?](#how-can-i-remove-the-next-steps-block-from-my-app)
-  - [How can I set up Incremental Static Revalidation?](#how-can-i-set-up-incremental-static-revalidation)
-- [Next steps](#next-steps)
+- [A minimal Next.js site with Sanity Studio](#a-minimal-nextjs-site-with-sanity-studio)
+  - [Table of Contents](#table-of-contents)
+  - [Project Overview](#project-overview)
+- [Important files and folders](#important-files-and-folders)
+  - [Configuration](#configuration)
+    - [Step 1. Set up the environment](#step-1-set-up-the-environment)
+    - [Step 2. Set up the project locally](#step-2-set-up-the-project-locally)
+    - [Step 3. Run Next.js locally in development mode](#step-3-run-nextjs-locally-in-development-mode)
+    - [Step 4. Deploy to production](#step-4-deploy-to-production)
+  - [Questions and Answers](#questions-and-answers)
+    - [It doesn't work! Where can I get help?](#it-doesnt-work-where-can-i-get-help)
+  - [Next steps](#next-steps)
 
 ## Project Overview
 
@@ -116,10 +114,6 @@ In case of any issues or questions, you can post:
 - [GitHub Discussions for Next.js][vercel-github]
 - [Sanity's GitHub Discussions][sanity-github]
 - [Sanity's Community Slack][sanity-community]
-
-### How can I remove the "Next steps" block from my app?
-
-You can remove it by deleting `intro-template`, and removing `IntroTemplate` usage from `pages/index.tsx`
 
 ## Next steps
 
