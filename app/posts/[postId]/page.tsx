@@ -1,6 +1,6 @@
 import { getPosts } from 'api/posts/getPosts'
 import { TPost } from 'api/posts/types'
-import { getDocument } from 'api/sanityDocuments/getDocument'
+import getSanityDocument from 'api/sanityDocuments/getSanityDocument'
 import { redirect } from 'next/navigation'
 import { Fragment } from 'react'
 
@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 export default async function Page({ params }: { params: { postId: string } }) {
   const postId = params.postId
 
-  const post = await getDocument<TPost>(postId)
+  const post = await getSanityDocument<TPost>(postId)
 
   if (!post) {
     redirect(`/`)

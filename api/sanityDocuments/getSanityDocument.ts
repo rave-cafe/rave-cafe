@@ -5,9 +5,11 @@ import { SanityDocument } from 'sanity'
 
 import { client } from '../../sanity/lib/client'
 
-export const getDocument = cache(
+const getSanityDocument = cache(
   async <T extends SanityDocument>(id: string) => {
-    const query = `*[_id == "${id}"][0]`
+    const query = `*[_id == "${id}"]`
     return (await client.fetch(query)) as T | undefined
   }
 )
+
+export default getSanityDocument
