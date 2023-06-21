@@ -28,7 +28,6 @@ export const postProjection = `
     author->
   }
 `
-
 export const getPostsQuery = `*[_type == "post"]${postProjection}`
 
 const PostPick = Post.pick({ _id: true, title: true, body: true })
