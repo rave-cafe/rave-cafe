@@ -1,4 +1,4 @@
-import { TPost } from 'api/posts/types'
+import { TPost } from 'api/post/types'
 import Link from 'next/link'
 
 type TPostProps = {

@@ -1,4 +1,4 @@
-import getPosts from 'api/posts/getPosts'
+import getPosts from 'api/post/getPosts'
 import Post from 'components/Post'
 import PATHS from 'constants/paths'
 

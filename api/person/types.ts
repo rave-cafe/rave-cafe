@@ -1,6 +1,6 @@
-import { sanityArrayOf } from 'api/sanity/arrays/types'
-import { SanityBlock } from 'api/sanity/blocks/types'
-import { SanityDocument } from 'api/sanity/documents/types'
+import { sanityArrayOf } from 'api/sanity/array/types'
+import { SanityBlock } from 'api/sanity/block/types'
+import { SanityDocument } from 'api/sanity/document/types'
 import { z } from 'zod'
 
 const PersonAttributes = z.object({

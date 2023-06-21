@@ -1,8 +1,8 @@
-import { Person } from 'api/people/types'
-import { sanityArrayOf } from 'api/sanity/arrays/types'
-import { SanityBlock } from 'api/sanity/blocks/types'
-import { SanityDocument } from 'api/sanity/documents/types'
-import { SanityReference } from 'api/sanity/references/types'
+import { Person } from 'api/person/types'
+import { sanityArrayOf } from 'api/sanity/array/types'
+import { SanityBlock } from 'api/sanity/block/types'
+import { SanityDocument } from 'api/sanity/document/types'
+import { SanityReference } from 'api/sanity/reference/types'
 import { z } from 'zod'
 
 /**

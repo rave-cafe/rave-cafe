@@ -1,6 +1,6 @@
-import getPosts from 'api/posts/getPosts'
-import { TPost } from 'api/posts/types'
-import getSanityDocument from 'api/sanity/documents/getSanityDocument'
+import getPosts from 'api/post/getPosts'
+import { TPost } from 'api/post/types'
+import getSanityDocument from 'api/sanity/document/getSanityDocument'
 import Post from 'components/Post'
 import { redirect } from 'next/navigation'
 
