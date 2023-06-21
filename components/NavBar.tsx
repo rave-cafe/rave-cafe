@@ -12,7 +12,7 @@ export default function NavBar() {
           alt="Rave Cafe logo"
           className="object-contain"
           fill
-          src="/rc-logo.png"
+          src="/rc-logo.svg"
         />
       </Link>
     </div>
