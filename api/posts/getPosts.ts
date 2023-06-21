@@ -5,9 +5,11 @@ import { Posts, TPost } from './types'
 
 const query = `*[_type == "post"]`
 
-export default async function getPosts() {
+async function getPosts() {
   const posts = await clientFetch(query)
   const parsedPosts: TPost[] = Posts.parse(posts)
 
   return parsedPosts
 }
+
+export default getPosts
