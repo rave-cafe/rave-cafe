@@ -20,12 +20,16 @@ const Post = SanityDocument.merge(PostAttributes)
  * Query definitions
  */
 
-export const getPostsQuery = `*[_type == "post"]{
-  _id,
-  title,
-  body,
-  author->
-}`
+export const postProjection = `
+  {
+    _id,
+    title,
+    body,
+    author->
+  }
+`
+
+export const getPostsQuery = `*[_type == "post"]${postProjection}`
 
 const PostPick = Post.pick({ _id: true, title: true, body: true })
 
