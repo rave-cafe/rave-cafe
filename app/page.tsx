@@ -1,14 +1,11 @@
 import { getPosts } from 'api/posts/getPosts'
-import { Fragment } from 'react'
+import Post from 'components/Post'
+import PATHS from 'constants/paths'
 
 export default async function Page() {
   const posts = await getPosts()
 
-  return posts.map(({ title, author, body, _createdAt }) => (
-    <Fragment key={_createdAt}>
-      <h1>{title}</h1>
-      <span>{author}</span>
-      <p className="whitespace-pre-wrap">{body}</p>
-    </Fragment>
+  return posts.map((post) => (
+    <Post key={post._id} href={`/${PATHS.POSTS}/${post._id}`} {...post} />
   ))
 }
