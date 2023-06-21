@@ -1,6 +1,5 @@
 import 'server-only'
 
-import { cache } from 'react'
 import { SanityDocument } from 'sanity'
 
 import { clientFetch } from '../../sanity/lib/client'
