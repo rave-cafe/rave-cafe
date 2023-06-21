@@ -19,7 +19,6 @@ const Post = SanityDocument.merge(PostAttributes)
 /**
  * Query definitions
  */
-
 export const postProjection = `
   {
     _id,
