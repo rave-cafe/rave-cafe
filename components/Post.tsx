@@ -9,8 +9,12 @@ export default async function Post({ href, title, author, body }: TPostProps) {
   return (
     <>
       <Title href={href}>{title}</Title>
-      <span>{author}</span>
-      <p className="whitespace-pre-wrap">{body}</p>
+      <span>{author.name}</span>
+      <p className="whitespace-pre-wrap">
+        {body.map(({ children }) =>
+          children.map(({ text, _key }) => <span key={_key}>{text}</span>)
+        )}
+      </p>
     </>
   )
 }

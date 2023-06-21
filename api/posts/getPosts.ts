@@ -1,12 +1,11 @@
 import 'server-only'
 
 import { clientFetch } from '../../sanity/lib/client'
-import { Posts, TPost } from './types'
-
-const query = `*[_type == "post"]`
+import { getPostsQuery, Posts, TPost } from './types'
 
 async function getPosts() {
-  const posts = await clientFetch(query)
+  const posts = await clientFetch<TPost[]>(getPostsQuery)
+
   const parsedPosts: TPost[] = Posts.parse(posts)
 
   return parsedPosts
