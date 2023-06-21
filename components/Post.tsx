@@ -5,9 +5,7 @@ type TPostProps = {
   href?: string
 } & TPost
 
-export default async function Post({ href, ...post }: TPostProps) {
-  const { title, author, body } = post
-
+export default async function Post({ href, title, author, body }: TPostProps) {
   return (
     <>
       <Title href={href}>{title}</Title>
