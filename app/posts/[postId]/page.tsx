@@ -20,7 +20,7 @@ export default async function Page({ params }: { params: { postId: string } }) {
   if (!post) {
     redirect(`/`)
   }
-
+  console.log(post)
   const { _id, title, author, body } = post
 
   return (
