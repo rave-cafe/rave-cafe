@@ -10,7 +10,7 @@ export const client = createClient({
   useCdn,
 })
 
-// Wrap the cache function in a way that reuses the TypeScript definitions
+// Wrap the Sanity fetch with React cache to dedupe requests app-wide
 export const clientFetch: <R>(query: string) => Promise<R> = cache(
   client.fetch.bind(client)
 )
