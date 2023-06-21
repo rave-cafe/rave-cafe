@@ -1,10 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import { previewSecretDocumentId, readToken } from '../../sanity/env'
-import { client } from '../../sanity/lib/client'
-import { getPreviewSecret } from '../../sanity/lib/previewSecret'
+import { previewSecretDocumentId, readToken } from '../../../sanity/env'
+import { client } from '../../../sanity/lib/client'
+import { getPreviewSecret } from '../../../sanity/lib/previewSecret'
 
-export default async function preview(
+export default async function GET(
   req: NextApiRequest,
   res: NextApiResponse<string | void>
 ) {

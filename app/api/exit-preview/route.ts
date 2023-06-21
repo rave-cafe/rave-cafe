@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-export default function exitPreview(
+export default function GET(
   req: NextApiRequest,
   res: NextApiResponse<string | void>
 ) {
