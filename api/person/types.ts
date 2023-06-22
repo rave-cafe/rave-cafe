@@ -1,6 +1,6 @@
 import { sanityArrayOf } from 'api/sanity/array/types'
 import { SanityBlock } from 'api/sanity/block/types'
-import { SanityObject } from 'api/sanity/object/types'
+import { SanityDocument } from 'api/sanity/document/types'
 import { z } from 'zod'
 
 const PersonAttributes = z.object({
@@ -9,4 +9,4 @@ const PersonAttributes = z.object({
   bio: z.array(sanityArrayOf(SanityBlock)),
 })
 
-export const Person = SanityObject.merge(PersonAttributes)
+export const Person = SanityDocument.merge(PersonAttributes)

@@ -1,6 +1,6 @@
 import getPosts from 'api/post/getPosts'
 import { postProjection, TPost } from 'api/post/types'
-import getSanityObject from 'api/sanity/object/getSanityObject'
+import getSanityDocument from 'api/sanity/document/getSanityDocument'
 import Post from 'components/Post'
 import { redirect } from 'next/navigation'
 
@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 export default async function Page({ params }: { params: { postId: string } }) {
   const postId = params.postId
 
-  const post = await getSanityObject<TPost>(postId, postProjection)
+  const post = await getSanityDocument<TPost>(postId, postProjection)
 
   if (!post) {
     redirect(`/`)

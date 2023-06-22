@@ -2,7 +2,7 @@ import 'server-only'
 
 import { clientFetch } from '../../../sanity/lib/client'
 
-async function getSanityObject<T extends Record<string, any>>(
+async function getSanityDocument<T extends Record<string, any>>(
   id: string,
   projection: string = ''
 ) {
@@ -10,4 +10,4 @@ async function getSanityObject<T extends Record<string, any>>(
   return await clientFetch<T | undefined>(query)
 }
 
-export default getSanityObject
+export default getSanityDocument
