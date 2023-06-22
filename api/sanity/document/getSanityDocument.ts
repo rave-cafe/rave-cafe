@@ -1,7 +1,5 @@
 import 'server-only'
 
-import { SanityDocument } from 'sanity'
-
 import { clientFetch } from '../../../sanity/lib/client'
 
 async function getSanityDocument<T extends Record<string, any>>(
