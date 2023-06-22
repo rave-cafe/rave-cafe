@@ -1,12 +1,10 @@
-import { sanityArrayOf } from 'api/sanity/array/types'
-import { SanityBlock } from 'api/sanity/block/types'
 import { SanityDocument } from 'api/sanity/document/types'
-import { z } from 'zod'
+import { q } from 'groqd'
 
-const PersonAttributes = z.object({
-  name: z.string(),
-  location: z.string(),
-  bio: z.array(sanityArrayOf(SanityBlock)),
+const PersonAttributes = q.object({
+  name: q.string(),
+  location: q.string(),
+  bio: q.contentBlocks(),
 })
 
 export const Person = SanityDocument.merge(PersonAttributes)

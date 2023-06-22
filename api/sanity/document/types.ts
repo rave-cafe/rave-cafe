@@ -1,13 +1,9 @@
-import { z } from 'zod'
+import { q } from 'groqd'
 
-export const SanityDocument = z.object({
-  _id: z.string(),
-  _createdAt: z.string(),
-  _updatedAt: z.string(),
-  _rev: z.string(),
-  _type: z.string(),
+export const SanityDocument = q.object({
+  _id: q.string(),
+  _createdAt: q.string(),
+  _updatedAt: q.string(),
+  _rev: q.string(),
+  _type: q.string(),
 })
-
-const keys = Object.keys(SanityDocument.shape)
-
-export const groqProjection = keys.join(', ')
