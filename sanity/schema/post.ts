@@ -25,6 +25,7 @@ const post: SchemaTypeDefinition = {
             //Remove special characters
             .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ''),
         validation: (Rule) => Rule.required(),
+        isUnique: true,
       },
     },
     {

@@ -6,6 +6,10 @@ export default async function Page() {
   const posts = await getPosts()
 
   return posts.map((post) => (
-    <Post key={post._id} href={`/${PATHS.POSTS}/${post._id}`} {...post} />
+    <Post
+      key={post._id}
+      href={`/${PATHS.BLOG}/${post.slug.current}`}
+      {...post}
+    />
   ))
 }

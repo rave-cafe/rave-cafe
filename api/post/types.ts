@@ -1,8 +1,12 @@
 import { Person } from 'api/person/types'
 import { sanityArrayOf } from 'api/sanity/array/types'
 import { SanityBlock } from 'api/sanity/block/types'
-import { SanityDocument } from 'api/sanity/document/types'
+import {
+  groqProjection as documentProjection,
+  SanityDocument,
+} from 'api/sanity/document/types'
 import { SanityReference } from 'api/sanity/reference/types'
+import { Slug } from 'api/sanity/slug/types'
 import { z } from 'zod'
 
 /**
@@ -11,26 +15,29 @@ import { z } from 'zod'
 const PostAttributes = z.object({
   title: z.string(),
   author: SanityReference,
+  slug: Slug,
   body: z.array(sanityArrayOf(SanityBlock)),
 })
 
-const Post = SanityDocument.merge(PostAttributes)
+const _Post = SanityDocument.merge(PostAttributes)
 
 /**
  * Query definitions
  */
-export const postProjection = `
+const postProjection = `
   {
-    _id,
+    ${documentProjection},
     title,
     body,
+    slug,
     author->
   }
 `
 export const postsQuery = `*[_type == "post"]${postProjection}`
+export function buildPostQuery(slug: string) {
+  return `*[_type == "post"  && slug.current == "${slug}"]${postProjection}[0]`
+}
 
-const PostPick = Post.pick({ _id: true, title: true, body: true })
-
-const PostRes = PostPick.merge(z.object({ author: Person }))
-export const Posts = z.array(PostRes)
-export type TPost = z.infer<typeof PostRes>
+export const Post = _Post.merge(z.object({ author: Person }))
+export const Posts = z.array(Post)
+export type TPost = z.infer<typeof Post>

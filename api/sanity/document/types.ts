@@ -7,3 +7,7 @@ export const SanityDocument = z.object({
   _rev: z.string(),
   _type: z.string(),
 })
+
+const keys = Object.keys(SanityDocument.shape)
+
+export const groqProjection = keys.join(', ')
