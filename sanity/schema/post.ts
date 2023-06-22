@@ -11,6 +11,23 @@ const post: SchemaTypeDefinition = {
       type: 'string',
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        //Change to schema title to automatically populate
+        source: 'title',
+        slugify: (input) =>
+          input
+            .toLowerCase()
+            //Remove spaces
+            .replace(/\s+/g, '-')
+            //Remove special characters
+            .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ''),
+        validation: (Rule) => Rule.required(),
+      },
+    },
+    {
       name: 'author',
       title: 'Author',
       to: [{ type: 'person' }],
