@@ -1,5 +1,5 @@
 const PATHS = {
-  POSTS: 'posts',
+  BLOG: 'blog',
 } as const
 
 export default PATHS
