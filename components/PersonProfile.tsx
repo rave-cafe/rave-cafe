@@ -1,4 +1,6 @@
 import { TGetPersonResponse } from 'api/person/getPerson'
+import PATHS from 'constants/paths'
+import Link from 'next/link'
 
 type TPersonProfile = {} & TGetPersonResponse
 function PersonProfile({ ...person }: TPersonProfile) {
@@ -9,6 +11,14 @@ function PersonProfile({ ...person }: TPersonProfile) {
       {person.bio?.map((bio) =>
         bio.children.map((el) => <span key={el._key}>{el.text}</span>)
       )}
+      <h2>Blog posts</h2>
+      <ul>
+        {person.posts.map((post) => (
+          <Link key={post._id} href={`/${PATHS.BLOG}/${post.slug}`}>
+            <li>{post.title}</li>
+          </Link>
+        ))}
+      </ul>
     </div>
   )
 }

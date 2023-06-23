@@ -21,7 +21,9 @@ async function getPersons() {
             ...SanityDocument.shape,
             title: q.string(),
             slug: q.slug('slug'),
-          }),
+          })
+          .order('_createdAt asc')
+          .slice(0, 5),
       })
   )
 
