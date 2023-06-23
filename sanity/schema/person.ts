@@ -12,6 +12,23 @@ const person: SchemaTypeDefinition = {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        //Change to schema title to automatically populate
+        source: 'name',
+        slugify: (input) =>
+          input
+            .toLowerCase()
+            //Remove spaces
+            .replace(/\s+/g, '-')
+            //Remove special characters
+            .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ''),
+        validation: (Rule) => Rule.required(),
+      },
+    },
+    {
       name: 'location',
       title: 'Location',
       type: 'string',
