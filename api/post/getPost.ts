@@ -14,7 +14,7 @@ async function getPost(slug: string) {
         title: q.string(),
         slug: q.slug('slug'),
         body: q.contentBlocks(),
-        author: q('author').deref().grabOne('name', q.string()),
+        author: q('author').deref().grab$({ name: q.string(), slug: q.slug('slug') }),
       })
       .slice(0)
   )
