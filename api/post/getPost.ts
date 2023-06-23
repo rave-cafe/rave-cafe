@@ -1,15 +1,26 @@
 import 'server-only'
 
-import { clientFetch } from '../../sanity/lib/client'
-import { buildPostQuery, Post, TPost } from './types'
+import { SanityDocument } from 'api/sanity/document/types'
+import { q } from 'groqd'
+
+import { runQuery } from '../../sanity/lib/client'
 
 async function getPost(slug: string) {
-  const query = buildPostQuery(slug)
-  const post = await clientFetch<TPost>(query)
+  const post = await runQuery(
+    q('*')
+      .filter(`_type == "post" && slug.current == "${slug}"`)
+      .grab$({
+        ...SanityDocument.shape,
+        title: q.string(),
+        slug: q.slug('slug'),
+        body: q.contentBlocks(),
+        author: q('author').deref().grabOne('name', q.string()),
+      })
+      .slice(0)
+  )
 
-  const parsedPost: TPost = Post.parse(post)
-
-  return parsedPost
+  return post
 }
 
+export type TGetPostResponse = Awaited<ReturnType<typeof getPost>>
 export default getPost

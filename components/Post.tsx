@@ -1,15 +1,15 @@
-import { TPost } from 'api/post/types'
+import { TGetPostResponse } from 'api/post/getPost'
 import Link from 'next/link'
 
 type TPostProps = {
   href?: string
-} & TPost
+} & TGetPostResponse
 
 export default async function Post({ href, title, author, body }: TPostProps) {
   return (
     <>
       <Title href={href}>{title}</Title>
-      <span>{author.name}</span>
+      <span>{author}</span>
       <p className="whitespace-pre-wrap">
         {body.map(({ children }) =>
           children.map(({ text, _key }) => <span key={_key}>{text}</span>)

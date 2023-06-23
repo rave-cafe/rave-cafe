@@ -9,6 +9,7 @@ const post: SchemaTypeDefinition = {
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
@@ -40,6 +41,7 @@ const post: SchemaTypeDefinition = {
       of: [{ type: 'block' }],
       title: 'Body',
       type: 'array',
+      validation: (Rule) => Rule.required(),
     },
   ],
 }
