@@ -5,10 +5,14 @@ import { q } from 'groqd'
 
 import { runQuery } from '../../sanity/lib/client'
 
-async function getEmbeds() {
+async function getEmbed(albumId: number, trackId?: number) {
+  const query = trackId
+    ? `albumId == "${albumId}" && trackId == "${trackId}"`
+    : `albumId == "${albumId}"`
+
   const embeds = await runQuery(
-    q('*', { isArray: true })
-      .filter('_type == "bandcamp"')
+    q('*')
+      .filter(`_type == "bandcamp" && ${query}`)
       .grab$({
         ...SanityDocument.shape,
         albumId: q.number(),
@@ -21,10 +25,11 @@ async function getEmbeds() {
             slug: q.slug('slug'),
           }),
       })
+      .slice(0)
   )
 
   return embeds
 }
 
-export type TGetEmbedsResponse = Awaited<ReturnType<typeof getEmbeds>>
-export default getEmbeds
+export type TGetEmbedResponse = Awaited<ReturnType<typeof getEmbed>>
+export default getEmbed
