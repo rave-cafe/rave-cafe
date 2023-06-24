@@ -1,4 +1,4 @@
-import { joinPath, SchemaTypeDefinition } from 'sanity'
+import { SchemaTypeDefinition } from 'sanity'
 
 import InputEmbedType from '../../sanity/components/InputEmbedType'
 
