@@ -23,18 +23,16 @@ function EmbeddedMedia({ embedCode, url }: TEmbeddedMedia) {
 
   const embedInfo = urlParser.parse(url)
 
-  if (!embedInfo) {
-    return (
-      <>
-        <Link href={url} rel="noopener nofollow" target="_blank">
-          {url}
-        </Link>
+  return (
+    <>
+      <Link href={url} rel="noopener nofollow" target="_blank">
+        {url}
+      </Link>
 
-        {/* TODO: switch through embedInfo.provider cases to add support for various services like YouTube, Spotify, etc  */}
-        {embedInfo && JSON.stringify(embedInfo)}
-      </>
-    )
-  }
+      {/* TODO: switch through embedInfo.provider cases to add support for various services like YouTube, Spotify, etc  */}
+      {embedInfo && JSON.stringify(embedInfo)}
+    </>
+  )
 }
 
 export default EmbeddedMedia

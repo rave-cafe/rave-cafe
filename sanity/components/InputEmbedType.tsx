@@ -8,17 +8,22 @@ export default function InputEmbedType(
 ) {
   const { onChange, value = '', elementProps } = props
 
-  const url = useFormValue(['url']) as string | undefined
-
-  useEffect(() => {
-    // clear this input when `url` input changes
-    onChange(unset())
-  }, [onChange, url])
+  const pathBase = props.path.filter((pathSegment) => pathSegment !== 'type')
+  const url = useFormValue([...pathBase, 'url']) as string | undefined
 
   let domain: string | undefined
   if (url) {
     domain = getDomainFromUrl(url).split('.')[0]
   }
+
+  useEffect(() => {
+    // clear this input when `url` input changes
+    if (!url) {
+      onChange(unset())
+    } else {
+      onChange(domain ? set(domain) : set(value))
+    }
+  }, [domain, onChange, url, value])
 
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
