@@ -1,29 +1,18 @@
 import 'server-only'
 
-import { SanityDocument } from 'api/sanity/document/types'
+import { documentSelection } from 'api/sanity/document/types'
 import { q } from 'groqd'
 
 import { runQuery } from '../../sanity/lib/client'
+import { embedSelection } from './types'
 
-async function getEmbed(albumId: number, trackId?: number) {
-  const query = trackId
-    ? `albumId == "${albumId}" && trackId == "${trackId}"`
-    : `albumId == "${albumId}"`
-
+async function getEmbed(id: string) {
   const embeds = await runQuery(
     q('*')
-      .filter(`_type == "bandcamp" && ${query}`)
+      .filter(`_type == "embed" && _id == "${id}"`)
       .grab$({
-        ...SanityDocument.shape,
-        albumId: q.number(),
-        trackId: q.number().optional(),
-        posts: q('*', { isArray: true })
-          .filter('_type == "post" && references(^._id)')
-          .grab$({
-            ...SanityDocument.shape,
-            title: q.string(),
-            slug: q.slug('slug'),
-          }),
+        ...documentSelection,
+        ...embedSelection,
       })
       .slice(0)
   )

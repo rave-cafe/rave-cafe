@@ -16,9 +16,11 @@
   "dependencies": {
     "@next/font": "^13.4.4",
     "@sanity/demo": "^1.0.1",
+    "@sanity/ui": "^1.6.0",
     "@sanity/vision": "^3.12.0",
     "@tailwindcss/typography": "^0.5.8",
     "groqd": "^0.15.6",
+    "js-video-url-parser": "^0.5.1",
     "next": "^13.4.4",
     "next-sanity": "^4.3.3",
     "react": "^18.2.0",

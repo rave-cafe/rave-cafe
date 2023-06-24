@@ -1,23 +1,13 @@
 import 'server-only'
 
-import { SanityDocument } from 'api/sanity/document/types'
 import { q } from 'groqd'
 
 import { runQuery } from '../../sanity/lib/client'
+import { postSelection } from './types'
 
 async function getPosts() {
   const posts = await runQuery(
-    q('*', { isArray: true })
-      .filterByType('post')
-      .grab$({
-        ...SanityDocument.shape,
-        title: q.string(),
-        slug: q.slug('slug'),
-        body: q.contentBlocks(),
-        author: q('author')
-          .deref()
-          .grab$({ name: q.string(), slug: q.slug('slug') }),
-      })
+    q('*', { isArray: true }).filterByType('post').grab$(postSelection)
   )
 
   return posts

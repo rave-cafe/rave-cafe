@@ -1,5 +1,5 @@
 import getEmbeds from 'api/embeds/getEmbeds'
-import BandcampIframe from 'components/BandcampIframe'
+import EmbeddedMedia from 'components/EmbeddedMedia'
 
 export default async function EmbedsPage() {
   const embeds = await getEmbeds()
@@ -8,7 +8,7 @@ export default async function EmbedsPage() {
       <h1>Embeds</h1>
       <ul>
         {embeds.map((embed) => (
-          <BandcampIframe key={embed._id} {...embed} />
+          <EmbeddedMedia key={embed._id} {...embed} />
         ))}
       </ul>
     </>

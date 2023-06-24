@@ -37,7 +37,7 @@ const post: SchemaTypeDefinition = {
     },
     {
       name: 'body',
-      of: [{ type: 'block' }],
+      of: [{ type: 'block' }, { type: 'embed' }],
       title: 'Body',
       type: 'array',
       validation: (Rule) => Rule.required(),
