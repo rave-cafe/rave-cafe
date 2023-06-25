@@ -1,4 +1,4 @@
-import { documentSelection } from 'domains/sanity/document/types'
+import { documentSelection } from 'domains/sanity/types'
 import { q } from 'groqd'
 
 export const relatedPostsQuery = q('*', { isArray: true })

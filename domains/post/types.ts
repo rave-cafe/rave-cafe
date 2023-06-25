@@ -1,5 +1,5 @@
 import { embedSelection } from 'domains/embed/types'
-import { documentSelection } from 'domains/sanity/document/types'
+import { documentSelection } from 'domains/sanity/types'
 import { q, type Selection } from 'groqd'
 
 export const postSelection = {

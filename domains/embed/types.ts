@@ -1,4 +1,4 @@
-import { objectSelection } from 'domains/sanity/object/types'
+import { objectSelection } from 'domains/sanity/types'
 import { q, type Selection, z } from 'groqd'
 
 export const embedSelection = {
