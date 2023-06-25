@@ -1,5 +1,5 @@
-import getPersons from 'api/person/getPersons'
 import PATHS from 'constants/paths'
+import getPersons from 'domains/person/api/getPersons'
 import Link from 'next/link'
 import { Fragment } from 'react'
 

@@ -4,9 +4,10 @@ import 'js-video-url-parser/lib/provider/youtube'
 import 'js-video-url-parser/lib/provider/tiktok'
 import 'js-video-url-parser/lib/provider/loom'
 
-import { TEmbed } from 'api/embed/types'
 import urlParser from 'js-video-url-parser/lib/base'
 import Link from 'next/link'
+
+import { TEmbed } from '../types'
 
 export type TEmbeddedMedia = {} & TEmbed
 

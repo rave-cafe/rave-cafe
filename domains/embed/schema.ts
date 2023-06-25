@@ -1,7 +1,6 @@
 import { CodeBlockIcon } from '@sanity/icons'
+import InputEmbedType from 'domains/sanity/components/InputEmbedType'
 import { SchemaTypeDefinition } from 'sanity'
-
-import InputEmbedType from '../../sanity/components/InputEmbedType'
 
 const embedSchema: SchemaTypeDefinition = {
   name: 'embed',

@@ -1,10 +1,10 @@
 import 'server-only'
 
-import { relatedPostsQuery } from 'api/post/queries'
+import { relatedPostsQuery } from 'domains/post/queries'
+import { runQuery } from 'domains/sanity/utils/client'
 import { q } from 'groqd'
 
-import { runQuery } from '../../sanity/lib/client'
-import { embedSelection } from './types'
+import { embedSelection } from '../types'
 
 async function getEmbed(id: string) {
   const embeds = await runQuery(

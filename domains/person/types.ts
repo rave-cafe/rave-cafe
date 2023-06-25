@@ -1,4 +1,4 @@
-import { documentSelection } from 'api/sanity/document/types'
+import { documentSelection } from 'domains/sanity/document/types'
 import { q, type Selection } from 'groqd'
 
 export const personSelection = {

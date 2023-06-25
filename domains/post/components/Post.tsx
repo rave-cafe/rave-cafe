@@ -1,8 +1,8 @@
-import { TGetPostResponse } from 'api/post/getPost'
 import PATHS from 'constants/paths'
+import EmbeddedMedia from 'domains/embed/components/EmbeddedMedia'
 import Link from 'next/link'
 
-import EmbeddedMedia from './EmbeddedMedia'
+import { TGetPostResponse } from '../api/getPost'
 
 type TPostProps = {
   href?: string

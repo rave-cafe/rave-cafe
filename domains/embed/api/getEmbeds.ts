@@ -1,9 +1,9 @@
 import 'server-only'
 
+import { runQuery } from 'domains/sanity/utils/client'
 import { q } from 'groqd'
 
-import { runQuery } from '../../sanity/lib/client'
-import { embedSelection } from './types'
+import { embedSelection } from '../types'
 
 async function getEmbeds() {
   const embeds = await runQuery(

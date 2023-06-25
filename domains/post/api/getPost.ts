@@ -2,8 +2,8 @@ import 'server-only'
 
 import { q } from 'groqd'
 
-import { runQuery } from '../../sanity/lib/client'
-import { postSelection } from './types'
+import { runQuery } from '../../sanity/utils/client'
+import { postSelection } from '../types'
 
 async function getPost(slug: string) {
   const post = await runQuery(

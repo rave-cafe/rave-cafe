@@ -1,10 +1,10 @@
 import 'server-only'
 
-import { relatedPostsQuery } from 'api/post/queries'
+import { relatedPostsQuery } from 'domains/post/queries'
+import { runQuery } from 'domains/sanity/utils/client'
 import { q } from 'groqd'
 
-import { runQuery } from '../../sanity/lib/client'
-import { personSelection } from './types'
+import { personSelection } from '../types'
 
 async function getPersons() {
   const persons = await runQuery(

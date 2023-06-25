@@ -1,6 +1,7 @@
-import { TGetPersonResponse } from 'api/person/getPerson'
 import PATHS from 'constants/paths'
 import Link from 'next/link'
+
+import { TGetPersonResponse } from '../api/getPerson'
 
 type TPersonProfile = {} & TGetPersonResponse
 function PersonProfile({ ...person }: TPersonProfile) {

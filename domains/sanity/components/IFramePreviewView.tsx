@@ -5,7 +5,7 @@ import { UserViewComponent } from 'sanity/desk'
 import { suspend } from 'suspend-react'
 
 import { apiVersion, previewSecretDocumentId } from '../env'
-import { getPreviewSecret } from '../lib/previewSecret'
+import { getPreviewSecret } from '../utils/previewSecret'
 
 const FETCH_SECRET = Symbol(previewSecretDocumentId)
 
