@@ -2,6 +2,8 @@ import { TGetPostResponse } from 'api/post/getPost'
 import PATHS from 'constants/paths'
 import Link from 'next/link'
 
+import EmbeddedMedia from './EmbeddedMedia'
+
 type TPostProps = {
   href?: string
 } & TGetPostResponse
@@ -15,7 +17,15 @@ export default async function Post({ href, title, author, body }: TPostProps) {
       </Link>
       <p className="whitespace-pre-wrap">
         {body.map(({ children }) =>
-          children.map(({ text, _key }) => <span key={_key}>{text}</span>)
+          children?.map((child) => {
+            if ('_key' in child) {
+              return <span key={child._key}>{child.text}</span>
+            }
+
+            if ('embedCode' in child) {
+              return <EmbeddedMedia key={child._id} {...child} />
+            }
+          })
         )}
       </p>
     </>

@@ -1,5 +1,6 @@
 import 'server-only'
 
+import { documentSelection } from 'api/sanity/document/types'
 import { q } from 'groqd'
 
 import { runQuery } from '../../sanity/lib/client'
@@ -9,7 +10,7 @@ async function getPost(slug: string) {
   const post = await runQuery(
     q('*')
       .filter(`_type == "post" && slug.current == "${slug}"`)
-      .grab$(postSelection)
+      .grab$({ ...documentSelection, ...postSelection })
       .slice(0)
   )
 

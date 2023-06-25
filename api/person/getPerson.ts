@@ -12,6 +12,7 @@ async function getPerson(slug: string) {
     q('*')
       .filter(`_type == "person" && slug.current == "${slug}"`)
       .grab$({
+        ...documentSelection,
         ...personSelection,
         posts: relatedPostsQuery,
       })
