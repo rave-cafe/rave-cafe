@@ -1,7 +1,8 @@
 import { Stack, TextInput, TextInputProps } from '@sanity/ui'
 import { useCallback, useEffect } from 'react'
 import { set, StringInputProps, unset, useFormValue } from 'sanity'
-import getDomainFromUrl from 'utils/getDomainFromUrl'
+
+import getDomainFromUrl from '../utils/getDomainFromUrl'
 
 export default function InputEmbedType(
   props: StringInputProps & TextInputProps

@@ -1,4 +1,4 @@
-import assertValue from 'utils/assertValue'
+import assertValue from './utils/assertValue'
 
 export const apiVersion =
   process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2023-01-01'
