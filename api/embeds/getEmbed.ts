@@ -1,6 +1,6 @@
 import 'server-only'
 
-import { documentSelection } from 'api/sanity/document/types'
+import { relatedPostsQuery } from 'api/post/queries'
 import { q } from 'groqd'
 
 import { runQuery } from '../../sanity/lib/client'
@@ -11,8 +11,8 @@ async function getEmbed(id: string) {
     q('*')
       .filter(`_type == "embed" && _id == "${id}"`)
       .grab$({
-        ...documentSelection,
         ...embedSelection,
+        posts: relatedPostsQuery,
       })
       .slice(0)
   )

@@ -4,11 +4,11 @@ import 'js-video-url-parser/lib/provider/youtube'
 import 'js-video-url-parser/lib/provider/tiktok'
 import 'js-video-url-parser/lib/provider/loom'
 
-import { TGetEmbedResponse } from 'api/embeds/getEmbed'
+import { TEmbed } from 'api/embeds/types'
 import urlParser from 'js-video-url-parser/lib/base'
 import Link from 'next/link'
 
-type TEmbeddedMedia = {} & TGetEmbedResponse
+export type TEmbeddedMedia = {} & TEmbed
 
 function EmbeddedMedia({ embedCode, url }: TEmbeddedMedia) {
   if (embedCode) {
@@ -17,6 +17,7 @@ function EmbeddedMedia({ embedCode, url }: TEmbeddedMedia) {
 
   if (!url) {
     throw new Error(
+      // there's def a way for TS to enforce this but that sounds hard, so:
       '<EmbeddedMedia /> requires one of props `embedCode` or `url`, but received neither.'
     )
   }

@@ -1,7 +1,6 @@
 import 'server-only'
 
 import { relatedPostsQuery } from 'api/post/queries'
-import { documentSelection } from 'api/sanity/document/types'
 import { q } from 'groqd'
 
 import { runQuery } from '../../sanity/lib/client'

@@ -19,7 +19,7 @@ const iframe: SchemaTypeDefinition = {
     },
     {
       name: 'embedCode',
-      title: 'Embed code',
+      title: 'Embed code (optional)',
       description:
         'The embed HTML, generally copy/pasted from the source website, e.g. Bandcamp "Share/Embed" button.',
       type: 'text',
