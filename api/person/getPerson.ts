@@ -1,7 +1,6 @@
 import 'server-only'
 
 import { relatedPostsQuery } from 'api/post/queries'
-import { documentSelection } from 'api/sanity/document/types'
 import { q } from 'groqd'
 
 import { runQuery } from '../../sanity/lib/client'
@@ -12,7 +11,6 @@ async function getPerson(slug: string) {
     q('*')
       .filter(`_type == "person" && slug.current == "${slug}"`)
       .grab$({
-        ...documentSelection,
         ...personSelection,
         posts: relatedPostsQuery,
       })
