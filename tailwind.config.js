@@ -4,9 +4,9 @@ const { theme } = require('@sanity/demo/tailwind')
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
+    './domains/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
-    './sanity/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     ...theme,
