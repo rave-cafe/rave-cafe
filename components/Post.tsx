@@ -18,12 +18,12 @@ export default async function Post({ href, title, author, body }: TPostProps) {
       <p className="whitespace-pre-wrap">
         {body.map((item) => {
           if ('children' in item) {
-            item.children.map((child) => {
+            return item.children.map((child) => {
               return <span key={child._key}>{child.text}</span>
             })
           }
 
-          if ('embedCode' in item) {
+          if ('url' in item && item._type === 'embed') {
             return <EmbeddedMedia key={item._key} {...item} />
           }
         })}
