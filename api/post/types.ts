@@ -7,9 +7,7 @@ export const postSelection = {
   ...documentSelection,
   title: q.string(),
   slug: q.slug('slug'),
-  body: q.array(
-    q.contentBlock().or(q.object(objectSelection).extend(embedSelection))
-  ),
+  body: q.array(q.contentBlock().or(q.object(embedSelection))),
   author: q('author')
     .deref()
     .grab$({ name: q.string(), slug: q.slug('slug') }),
