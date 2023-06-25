@@ -4,14 +4,11 @@ import 'js-video-url-parser/lib/provider/youtube'
 import 'js-video-url-parser/lib/provider/tiktok'
 import 'js-video-url-parser/lib/provider/loom'
 
-import { embedSelection } from 'api/embeds/types'
-import { z } from 'groqd'
+import { TEmbed } from 'api/embeds/types'
 import urlParser from 'js-video-url-parser/lib/base'
 import Link from 'next/link'
 
-const EmbedSelection = z.object(embedSelection)
-
-export type TEmbeddedMedia = {} & z.infer<typeof EmbedSelection>
+export type TEmbeddedMedia = {} & TEmbed
 
 function EmbeddedMedia({ embedCode, url }: TEmbeddedMedia) {
   if (embedCode) {
