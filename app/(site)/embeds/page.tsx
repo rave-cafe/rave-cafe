@@ -8,7 +8,7 @@ export default async function EmbedsPage() {
       <h1>Embeds</h1>
       <ul>
         {embeds.map((embed) => (
-          <EmbeddedMedia key={embed._id} {...embed} />
+          <EmbeddedMedia key={embed._key} {...embed} />
         ))}
       </ul>
     </>

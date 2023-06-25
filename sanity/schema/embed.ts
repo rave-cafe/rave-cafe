@@ -1,11 +1,13 @@
+import { CodeBlockIcon } from '@sanity/icons'
 import { SchemaTypeDefinition } from 'sanity'
 
 import InputEmbedType from '../../sanity/components/InputEmbedType'
 
 const iframe: SchemaTypeDefinition = {
   name: 'embed',
-  title: 'Embedded media',
-  type: 'document',
+  title: 'Embed',
+  type: 'object',
+  icon: CodeBlockIcon,
   fields: [
     {
       name: 'url',

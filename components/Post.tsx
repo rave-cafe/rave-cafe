@@ -16,17 +16,17 @@ export default async function Post({ href, title, author, body }: TPostProps) {
         <span>{author.name}</span>
       </Link>
       <p className="whitespace-pre-wrap">
-        {body.map(({ children }) =>
-          children?.map((child) => {
-            if ('_key' in child) {
+        {body.map((item) => {
+          if ('children' in item) {
+            item.children.map((child) => {
               return <span key={child._key}>{child.text}</span>
-            }
+            })
+          }
 
-            if ('embedCode' in child) {
-              return <EmbeddedMedia key={child._id} {...child} />
-            }
-          })
-        )}
+          if ('embedCode' in item) {
+            return <EmbeddedMedia key={item._key} {...item} />
+          }
+        })}
       </p>
     </>
   )
