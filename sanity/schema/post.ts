@@ -1,3 +1,4 @@
+import { ImageIcon } from '@sanity/icons'
 import { SchemaTypeDefinition } from 'sanity'
 
 const post: SchemaTypeDefinition = {
@@ -36,8 +37,51 @@ const post: SchemaTypeDefinition = {
       weak: true,
     },
     {
+      title: 'Tags',
+      name: 'tags',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        layout: 'tags',
+      },
+    },
+    {
+      title: 'Main Image',
+      name: 'mainImage',
+      type: 'image',
+      fields: [
+        {
+          type: 'string',
+          name: 'alt',
+          title: 'Alternative text',
+          description: `Describe the image to help screen readers`,
+          options: {
+            isHighlighted: true,
+          },
+        },
+      ],
+    },
+    {
       name: 'body',
-      of: [{ type: 'block' }, { type: 'embed' }],
+      of: [
+        { type: 'block' },
+        { type: 'embed' },
+        {
+          type: 'image',
+          icon: ImageIcon,
+          fields: [
+            {
+              type: 'string',
+              name: 'alt',
+              title: 'Alternative text',
+              description: `Describe the image to help screen readers`,
+              options: {
+                isHighlighted: true,
+              },
+            },
+          ],
+        },
+      ],
       title: 'Body',
       type: 'array',
       validation: (Rule) => Rule.required(),
