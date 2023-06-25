@@ -1,7 +1,7 @@
 import { ImageIcon } from '@sanity/icons'
 import { SchemaTypeDefinition } from 'sanity'
 
-const post: SchemaTypeDefinition = {
+const postSchema: SchemaTypeDefinition = {
   name: 'post',
   title: 'Post',
   type: 'document',
@@ -89,4 +89,4 @@ const post: SchemaTypeDefinition = {
   ],
 }
 
-export default post
+export default postSchema

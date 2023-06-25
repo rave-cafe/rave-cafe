@@ -1,4 +1,4 @@
-import getEmbeds from 'api/embeds/getEmbeds'
+import getEmbeds from 'api/embed/getEmbeds'
 import EmbeddedMedia from 'components/EmbeddedMedia'
 
 export default async function EmbedsPage() {

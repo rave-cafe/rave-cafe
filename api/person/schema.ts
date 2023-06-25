@@ -1,6 +1,6 @@
 import { SchemaTypeDefinition } from 'sanity'
 
-const person: SchemaTypeDefinition = {
+const personSchema: SchemaTypeDefinition = {
   name: 'person',
   title: 'Person',
   type: 'document',
@@ -42,4 +42,4 @@ const person: SchemaTypeDefinition = {
   ],
 }
 
-export default person
+export default personSchema

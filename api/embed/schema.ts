@@ -3,7 +3,7 @@ import { SchemaTypeDefinition } from 'sanity'
 
 import InputEmbedType from '../../sanity/components/InputEmbedType'
 
-const iframe: SchemaTypeDefinition = {
+const embedSchema: SchemaTypeDefinition = {
   name: 'embed',
   title: 'Embed',
   type: 'object',
@@ -36,4 +36,4 @@ const iframe: SchemaTypeDefinition = {
   ],
 }
 
-export default iframe
+export default embedSchema
