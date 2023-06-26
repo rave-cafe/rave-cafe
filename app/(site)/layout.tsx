@@ -3,7 +3,7 @@
 import 'styles/global.css'
 
 import * as Dialog from '@radix-ui/react-dialog'
-import MenuContainer from 'domains/navigation/components/MenuContainer'
+import DialogContainer from 'domains/navigation/components/DialogContainer'
 import NavBar from 'domains/navigation/components/NavBar'
 
 export default function RootLayout({
@@ -12,11 +12,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <MenuContainer>
+    <DialogContainer>
       <Dialog.Trigger asChild>
         <NavBar />
       </Dialog.Trigger>
       {children}
-    </MenuContainer>
+    </DialogContainer>
   )
 }

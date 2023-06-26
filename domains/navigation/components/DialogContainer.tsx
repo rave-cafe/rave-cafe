@@ -3,9 +3,9 @@ import * as Dialog from '@radix-ui/react-dialog'
 import { Cross2Icon } from '@radix-ui/react-icons'
 import { PropsWithChildren } from 'react'
 
-type TMenuContainer = PropsWithChildren<{}>
+type TDialogContainer = PropsWithChildren<{}>
 
-function MenuContainer({ children }: TMenuContainer) {
+function DialogContainer({ children }: TDialogContainer) {
   return (
     <Dialog.Root>
       {children}
@@ -39,4 +39,4 @@ function MenuContainer({ children }: TMenuContainer) {
   )
 }
 
-export default MenuContainer
+export default DialogContainer
