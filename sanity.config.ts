@@ -7,8 +7,8 @@ import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 
 // see https://www.sanity.io/docs/api-versioning for how versioning works
-import { apiVersion, dataset, projectId } from './sanity/env'
-import { schema } from './sanity/schema'
+import { apiVersion, dataset, projectId } from './domains/sanity/env'
+import { schema } from './domains/sanity/schema'
 
 export default defineConfig({
   basePath: '/studio',

@@ -1,6 +1,6 @@
-import getPosts from 'api/post/getPosts'
-import Post from 'components/Post'
 import PATHS from 'constants/paths'
+import getPosts from 'domains/post/api/getPosts'
+import Post from 'domains/post/components/Post'
 
 export default async function Page() {
   const posts = await getPosts()

@@ -1,5 +1,5 @@
-import getEmbeds from 'api/embeds/getEmbeds'
-import EmbeddedMedia from 'components/EmbeddedMedia'
+import getEmbeds from 'domains/embed/api/getEmbeds'
+import EmbeddedMedia from 'domains/embed/components/EmbeddedMedia'
 
 export default async function EmbedsPage() {
   const embeds = await getEmbeds()

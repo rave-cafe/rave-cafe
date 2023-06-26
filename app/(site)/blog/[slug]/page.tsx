@@ -1,6 +1,6 @@
-import getPost from 'api/post/getPost'
-import getPosts from 'api/post/getPosts'
-import Post from 'components/Post'
+import getPost from 'domains/post/api/getPost'
+import getPosts from 'domains/post/api/getPosts'
+import Post from 'domains/post/components/Post'
 import { redirect } from 'next/navigation'
 
 export async function generateStaticParams() {

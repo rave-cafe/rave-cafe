@@ -1,6 +1,6 @@
-import getPerson from 'api/person/getPerson'
-import getPersons from 'api/person/getPersons'
-import PersonProfile from 'components/PersonProfile'
+import getPerson from 'domains/person/api/getPerson'
+import getPersons from 'domains/person/api/getPersons'
+import PersonProfile from 'domains/person/components/PersonProfile'
 import { redirect } from 'next/navigation'
 
 export async function generateStaticParams() {
