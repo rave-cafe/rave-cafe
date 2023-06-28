@@ -1,6 +1,16 @@
 import 'styles/global.css'
 
-import NavBar from 'components/NavBar'
+import PATHS from 'constants/paths'
+import NavMenu, { type TNavMenu } from 'domains/navigation/components/NavMenu'
+
+import MainMenuContainer from './components/MainMenuContainer'
+
+const menuItems: TNavMenu['items'] = [
+  { label: 'parties', href: `/${PATHS.PARTIES}` },
+  { label: 'mixes', href: `/${PATHS.MIXES}` },
+  { label: 'zines', href: `/${PATHS.ZINES}` },
+  { label: 'about', href: `/${PATHS.ABOUT}` },
+]
 
 export default function RootLayout({
   children,
@@ -8,9 +18,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <>
-      <NavBar />
-      {children}
-    </>
+    <MainMenuContainer menu={<NavMenu items={menuItems} />}>
+      <main>{children}</main>
+    </MainMenuContainer>
   )
 }
