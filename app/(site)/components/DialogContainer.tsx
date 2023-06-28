@@ -10,7 +10,6 @@ function DialogContainer({ children, dialog }: TDialogContainer) {
   return (
     <Dialog.Root>
       {children}
-      <Dialog.Overlay />
       <Dialog.Portal>{dialog}</Dialog.Portal>
     </Dialog.Root>
   )

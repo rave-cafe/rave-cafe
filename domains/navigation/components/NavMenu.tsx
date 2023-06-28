@@ -1,30 +1,23 @@
-import * as Dialog from '@radix-ui/react-dialog'
-import { Cross2Icon } from '@radix-ui/react-icons'
+import Link from 'next/link'
+import { ForwardedRef, forwardRef } from 'react'
 
-export function NavMenu() {
-  return (
-    <Dialog.Content>
-      <Dialog.Title>Edit profile</Dialog.Title>
-      <Dialog.Description>descriptionsnsndnfsdnfn</Dialog.Description>
-
-      <div
-        style={{
-          display: 'flex',
-          marginTop: 25,
-          justifyContent: 'flex-end',
-        }}
-      >
-        <Dialog.Close asChild>
-          <button>Save changes</button>
-        </Dialog.Close>
-      </div>
-      <Dialog.Close asChild>
-        <button aria-label="Close">
-          <Cross2Icon />
-        </button>
-      </Dialog.Close>
-    </Dialog.Content>
-  )
+export type TNavMenu = {
+  items: { label: string; href: string }[]
 }
+
+export const NavMenu = forwardRef(function NavMenuComponent(
+  { items }: TNavMenu,
+  ref: ForwardedRef<HTMLUListElement>
+) {
+  return (
+    <ul ref={ref}>
+      {items.map(({ label, href }) => (
+        <Link href={href} key={href}>
+          <li>{label}</li>
+        </Link>
+      ))}
+    </ul>
+  )
+})
 
 export default NavMenu

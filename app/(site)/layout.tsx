@@ -1,12 +1,16 @@
-'use client'
-
 import 'styles/global.css'
 
-import * as Dialog from '@radix-ui/react-dialog'
-import MenuIcon from 'domains/navigation/components/MenuIcon'
-import NavMenu from 'domains/navigation/components/NavMenu'
+import PATHS from 'constants/paths'
+import NavMenu, { type TNavMenu } from 'domains/navigation/components/NavMenu'
 
-import DialogContainer from './components/DialogContainer'
+import MainMenuContainer from './components/MainMenuContainer'
+
+const menuItems: TNavMenu['items'] = [
+  { label: 'parties', href: `/${PATHS.PARTIES}` },
+  { label: 'mixes', href: `/${PATHS.MIXES}` },
+  { label: 'zines', href: `/${PATHS.ZINES}` },
+  { label: 'about', href: `/${PATHS.ABOUT}` },
+]
 
 export default function RootLayout({
   children,
@@ -14,11 +18,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <DialogContainer dialog={<NavMenu />}>
-      <Dialog.Trigger asChild>
-        <MenuIcon />
-      </Dialog.Trigger>
+    <MainMenuContainer menu={<NavMenu items={menuItems} />}>
       <main>{children}</main>
-    </DialogContainer>
+    </MainMenuContainer>
   )
 }
