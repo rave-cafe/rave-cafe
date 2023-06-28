@@ -1,6 +1,6 @@
 import { SchemaTypeDefinition } from 'sanity'
 
-const staticContent: SchemaTypeDefinition = {
+const staticContentSchema: SchemaTypeDefinition = {
   name: 'staticContent',
   title: 'Static content',
   type: 'document',
@@ -37,4 +37,4 @@ const staticContent: SchemaTypeDefinition = {
   ],
 }
 
-export default staticContent
+export default staticContentSchema
