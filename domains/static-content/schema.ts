@@ -30,9 +30,10 @@ const staticContentSchema: SchemaTypeDefinition = {
     },
     {
       name: 'body',
-      of: [{ type: 'block' }],
+      of: [{ type: 'block', validation: (Rule) => Rule.required() }],
       title: 'Body',
       type: 'array',
+      validation: (Rule) => Rule.required(),
     },
   ],
 }
