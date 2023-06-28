@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 import { ForwardedRef, forwardRef, HTMLAttributes } from 'react'
 import { twMerge } from 'tailwind-merge'
