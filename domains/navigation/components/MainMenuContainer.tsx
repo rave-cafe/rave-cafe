@@ -1,10 +1,9 @@
 'use client'
 
 import * as Dialog from '@radix-ui/react-dialog'
+import DialogContainer from 'components/DialogContainer'
 import MenuIcon from 'domains/navigation/components/MenuIcon'
 import { PropsWithChildren, ReactNode } from 'react'
-
-import DialogContainer from './DialogContainer'
 
 type TMainMenuContainer = PropsWithChildren<{
   menu: ReactNode

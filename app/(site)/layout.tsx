@@ -1,9 +1,8 @@
 import 'styles/global.css'
 
 import PATHS from 'constants/paths'
+import MainMenuContainer from 'domains/navigation/components/MainMenuContainer'
 import NavMenu, { type TNavMenu } from 'domains/navigation/components/NavMenu'
-
-import MainMenuContainer from './components/MainMenuContainer'
 
 const menuItems: TNavMenu['items'] = [
   { label: 'parties', href: `/${PATHS.PARTIES}` },
