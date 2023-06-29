@@ -12,6 +12,7 @@ async function getStaticContent(slug: string) {
       .grab$(staticContentSelection)
       .slice(0)
   )
+  console.log({ staticContent })
 
   return staticContent
 }
