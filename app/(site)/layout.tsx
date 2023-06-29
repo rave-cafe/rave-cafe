@@ -5,7 +5,7 @@ import MainMenuContainer from 'domains/navigation/components/MainMenuContainer'
 import NavMenu, { type TNavMenu } from 'domains/navigation/components/NavMenu'
 
 const menuItems: TNavMenu['items'] = [
-  { label: 'parties', href: `/${PATHS.PARTIES}` },
+  { label: 'parties', href: `/${PATHS.BLOG}` },
   { label: 'mixes', href: `/${PATHS.MIXES}` },
   { label: 'zines', href: `/${PATHS.ZINES}` },
   { label: 'about', href: `/${PATHS.ABOUT}` },

@@ -1,3 +1,6 @@
+'use client'
+
+import * as Dialog from '@radix-ui/react-dialog'
 import Link from 'next/link'
 import { ForwardedRef, forwardRef } from 'react'
 
@@ -10,11 +13,13 @@ export const NavMenu = forwardRef(function NavMenuComponent(
   ref: ForwardedRef<HTMLUListElement>
 ) {
   return (
-    <ul ref={ref}>
+    <ul ref={ref} className="flex flex-col">
       {items.map(({ label, href }) => (
-        <Link href={href} key={href}>
-          <li>{label}</li>
-        </Link>
+        <Dialog.Trigger key={href}>
+          <Link href={href}>
+            <li>{label}</li>
+          </Link>
+        </Dialog.Trigger>
       ))}
     </ul>
   )
