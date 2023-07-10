@@ -4,6 +4,8 @@ const staticContentSchema: SchemaTypeDefinition = {
   name: 'staticContent',
   title: 'Static content',
   type: 'document',
+  description:
+    'Static site copy/pages, optionally accessible by slug as the top-level route (e.g. localhost:3000/[slug])',
   fields: [
     {
       name: 'title',
